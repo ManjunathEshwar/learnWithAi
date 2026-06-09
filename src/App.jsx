@@ -5,15 +5,12 @@ import heroImg from './assets/hero.png'
 import './App.css'
 
 function App() {
-
-  const list = ["Apple", "Banana", "Mango"];
+   const [data, setData] = useState("");
   return (
     <>
       <div>
-        <ul>
-          {list.map((item, index) => 
-          <li key={index}>{item}</li>)}
-          </ul>        
+        <input value={data} onChange={(e) => setData(e.target.value)} placeholder='Enter Something.!'></input>
+        <h2>{data}</h2> 
       </div>
     </>
   )
