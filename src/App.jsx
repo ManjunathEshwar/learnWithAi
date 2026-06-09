@@ -5,24 +5,15 @@ import heroImg from './assets/hero.png'
 import './App.css'
 
 function App() {
-  const [count, setCount] = useState(0)
-  const increment = () => {
-    setCount(prev => prev + 1);
-  }
-  const decrement = () => {
-    if (count > 0) {
-      setCount(prev => prev - 1);
-    }
-  }
 
+  const list = ["Apple", "Banana", "Mango"];
   return (
     <>
       <div>
-        <button onClick={increment}>+</button>
-        <button onClick={decrement}>-</button>
-        
-        <h2>Count is: {count}</h2>
-        
+        <ul>
+          {list.map((item, index) => 
+          <li key={index}>{item}</li>)}
+          </ul>        
       </div>
     </>
   )
