@@ -6,11 +6,17 @@ import './App.css'
 
 function App() {
    const [data, setData] = useState("");
+
+   const handleSubmit = () => {
+    alert(data)
+   }
   return (
     <>
       <div>
-        <input value={data} onChange={(e) => setData(e.target.value)} placeholder='Enter Something.!'></input>
-        <h2>{data}</h2> 
+        <form onSubmit={handleSubmit}>
+          <input value={data} onChange={(e) => setData(e.target.value)} placeholder='Enter Something.!'></input>
+          <button>Submit</button>
+        </form>
       </div>
     </>
   )
